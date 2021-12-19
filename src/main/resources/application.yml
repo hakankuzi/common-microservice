@@ -2,6 +2,16 @@ server:
   port: 9090
 
 spring:
+  kafka:
+    request.timeout.ms: 20000
+    schema.registry.url: http://localhost:8081
+    bootstrap.servers: http://localhost:9092
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      user-producer-event:
+        topic: userEventTopic
+        groupId: userEventTopic-microservice-producer
+        clientId: userEvent-producer
   application:
     name: COMMON-SERVICE
   datasource:

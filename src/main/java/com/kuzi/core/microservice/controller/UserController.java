@@ -24,7 +24,8 @@ public class UserController {
 
   @GetMapping("/")
   public List<User> getUsers() {
-    throw new ApiRequestException("Oops cannot get all users with custom exception!");
-    // return userService.getUsers();
+
+    //  throw new ApiRequestException("Oops cannot get all users with custom exception!");
+    return userService.getUsers();
   }
 }
