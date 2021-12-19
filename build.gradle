@@ -24,6 +24,9 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.liquibase', name: 'liquibase-core', version: '3.8.0'
+	runtimeOnly 'com.h2database:h2'
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.4'
 }
 
 test {
