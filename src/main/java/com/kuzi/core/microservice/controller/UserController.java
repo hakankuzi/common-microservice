@@ -1,13 +1,13 @@
 package com.kuzi.core.microservice.controller;
 
 import com.kuzi.core.microservice.entity.User;
+import com.kuzi.core.microservice.exception.ApiRequestException;
 import com.kuzi.core.microservice.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
@@ -20,5 +20,11 @@ public class UserController {
   public User saveUser(@RequestBody User user) {
     log.info("Inside saveUser of userController");
     return userService.saveUser(user);
+  }
+
+  @GetMapping("/")
+  public List<User> getUsers() {
+    throw new ApiRequestException("Oops cannot get all users with custom exception!");
+    // return userService.getUsers();
   }
 }
