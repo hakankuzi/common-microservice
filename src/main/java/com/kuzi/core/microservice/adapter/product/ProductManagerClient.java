@@ -15,5 +15,4 @@ public interface ProductManagerClient {
   @GetMapping(value = "/products/", consumes = APPLICATION_JSON_VALUE)
   ResponseEntity<List<Product>> getProducts();
 
-  // test
 }
