@@ -1,5 +1,8 @@
 package com.kuzi.core.microservice.controller;
 
+import com.kuzi.core.microservice.adapter.product.ProductManager;
+import com.kuzi.core.microservice.adapter.product.ProductManagerClient;
+import com.kuzi.core.microservice.entity.Product;
 import com.kuzi.core.microservice.entity.User;
 import com.kuzi.core.microservice.exception.ApiRequestException;
 import com.kuzi.core.microservice.service.UserService;
@@ -15,6 +18,7 @@ import java.util.List;
 public class UserController {
 
   @Autowired private UserService userService;
+  @Autowired private ProductManager productManager;
 
   @PostMapping("/")
   public User saveUser(@RequestBody User user) {
@@ -27,5 +31,10 @@ public class UserController {
 
     //  throw new ApiRequestException("Oops cannot get all users with custom exception!");
     return userService.getUsers();
+  }
+
+  @GetMapping("/products")
+  public List<Product> getProducts() {
+    return productManager.getProducts();
   }
 }
