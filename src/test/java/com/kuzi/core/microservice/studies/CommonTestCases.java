@@ -42,8 +42,12 @@ public class CommonTestCases {
     - thenReturn() readibility/type check/runtime check/other operation perform - doReturn()
    */
 
+
+
   TestCasesService testCasesService;
 
+
+  /*
   private static Object[] testValues() {
     return new Object[] {new Object[] {50, 50, 2500}, new Object[] {-10, 50, -1}};
   }
@@ -111,4 +115,8 @@ public class CommonTestCases {
     String expected = "Fail";
     assertEquals(expected, actual);
   }
+
+   */
+
+
 }
